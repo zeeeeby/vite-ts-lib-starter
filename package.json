@@ -2,11 +2,11 @@
   "name": "vite-vanilla-ts-lib-starter",
   "private": true,
   "version": "0.0.6",
-  "module": "./dist/vite-vanilla-ts-lib-starter.js",
+  "module": "./dist/index.js",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/vite-vanilla-ts-lib-starter.js"
+      "import": "./dist/index.js"
     },
     "./dist/": {
       "import": "./dist/"
@@ -22,9 +22,7 @@
     "lint:styles": "stylelint ./**/*.{css,scss}",
     "format:scripts": "prettier . --write",
     "format:styles": "stylelint ./**/*.{css,scss} --fix",
-    "format": "npm run format:scripts && npm run format:styles",
-    "prepare": "husky && echo 'npx lint-staged' > .husky/pre-commit && git add .husky/pre-commit",
-    "uninstall-husky": "npm uninstall husky --no-save && git config --unset core.hooksPath && npx rimraf .husky"
+    "format": "npm run format:scripts && npm run format:styles"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
@@ -35,7 +33,6 @@
     "eslint": "^9.30.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.1",
-    "husky": "^9.1.7",
     "jiti": "^2.4.2",
     "lint-staged": "^16.1.2",
     "postcss": "^8.5.6",

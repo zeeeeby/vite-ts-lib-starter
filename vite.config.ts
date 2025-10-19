@@ -15,13 +15,6 @@ const getPackageNameCamelCase = () => {
   }
 };
 
-const fileName = {
-  es: `${getPackageName()}.js`,
-  iife: `${getPackageName()}.iife.js`,
-};
-
-const formats = Object.keys(fileName) as Array<keyof typeof fileName>;
-
 export default defineConfig({
   base: "./",
   build: {
@@ -29,8 +22,8 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
       name: getPackageNameCamelCase(),
-      formats,
-      fileName: format => fileName[format],
+      formats: ["es", "iife"],
+      fileName: format => `index.${format}.js`,
     },
   },
   test: {
